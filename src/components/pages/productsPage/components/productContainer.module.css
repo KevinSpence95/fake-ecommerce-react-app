@@ -1,0 +1,10 @@
+.productContainer {
+  /* background-color: palegreen; */
+  padding: 8px;
+
+  flex-basis: 500px;
+  flex-grow: 9999;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

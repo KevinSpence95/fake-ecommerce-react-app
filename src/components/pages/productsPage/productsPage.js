@@ -3,17 +3,17 @@ import { StoreData } from "../../../context/contextProvider";
 import Filters from "./components/filters";
 import PageSelector from "./components/pageSelector";
 import ProductsContainer from "./components/productsContainer";
+import styles from "./productPage.module.css";
 
 export default function ProductsPage() {
   const { state } = useContext(StoreData);
-  console.log(state.products);
 
   //states for user filters
   const [searchVal, setSearchVal] = useState("");
   const [stars, setStars] = useState(0);
   const [includeOutOfStock, setIncludeOutOfStock] = useState(false);
   const [sortByAscendingPrice, setSortByAscendingPrice] = useState(false);
-  const [resultsPerPage, setResultsPerPage] = useState(9);
+  const [resultsPerPage, setResultsPerPage] = useState(10);
 
   //page selector state
   const [page, setPage] = useState(1);
@@ -33,6 +33,7 @@ export default function ProductsPage() {
       if (stars === 0) {
         return true; //keep all products if star filter is set to 0
       } else {
+        console.log(`stars:${stars} | prod rating:${prod.rating}`);
         return prod.rating === stars; //if the product rating matches the non-zero star rating keep it
       }
     })
@@ -51,11 +52,11 @@ export default function ProductsPage() {
     });
   }
 
-  console.log(filteredProducts);
+  //   console.log(filteredProducts);
 
   return (
-    <main className="productPageContainer">
-      <section className="filtersAndProducts">
+    <main className={styles.productPageContainer}>
+      <section className={styles.filtersAndProducts}>
         <Filters
           searchVal={searchVal}
           setSearchVal={setSearchVal}
@@ -68,9 +69,13 @@ export default function ProductsPage() {
           resultsPerPage={resultsPerPage}
           setResultsPerPage={setResultsPerPage}
         />
-        <ProductsContainer filteredProducts={filteredProducts} page={page} resultsPerPage={resultsPerPage}/>
+        <ProductsContainer
+          filteredProducts={filteredProducts}
+          page={page}
+          resultsPerPage={resultsPerPage}
+        />
       </section>
-      <section className="pageSelector">
+      <section className={styles.pageSelector}>
         <PageSelector
           numPages={Math.ceil(filteredProducts.length / resultsPerPage)}
           page={page}

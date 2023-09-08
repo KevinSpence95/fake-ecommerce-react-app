@@ -1,8 +1,9 @@
 import StarRating from "./starRating";
+import styles from './filters.module.css'
 
 export default function Filters(props) {
   return (
-    <article className="filters">
+    <article className={styles.filters}>
       <h3>Search Filters</h3>
       <input
         type="text"
@@ -40,6 +41,7 @@ export default function Filters(props) {
         <StarRating
           stars={props.stars}
           handler={(x) => props.setStars(x + 1)}
+          size={'large'}
         />
       </div>
       <div>
@@ -63,6 +65,7 @@ export default function Filters(props) {
           props.setStars(0);
           props.setIncludeOutOfStock(false);
           props.setSortByAscendingPrice(false);
+          props.setResultsPerPage(10)
         }}
       >
         Clear Filters

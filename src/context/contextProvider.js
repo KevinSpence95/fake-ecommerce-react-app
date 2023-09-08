@@ -11,16 +11,11 @@ export default function ContextProvider({ children }) {
       id: crypto.randomUUID(),
       name: faker.commerce.productName(),
       price: faker.commerce.price(),
-      image:
-        Math.random() > 0.5
-          ? "https://loremflickr.com/320/180"
-          : "https://placekitten.com/320/180",
+      image: faker.image.urlLoremFlickr(),
       inStock: Math.random() > 0.93 ? false : true,
-      ratings: Math.floor(Math.random() * 5) + 1,
+      rating: Math.floor(Math.random() * 5) + 1,
     };
   });
-
-  //   console.log(products);
 
   const [state, dispatch] = useReducer(cartReducer, {
     products,

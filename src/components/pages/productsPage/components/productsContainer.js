@@ -1,4 +1,5 @@
 import Product from "./product";
+import styles from './productContainer.module.css'
 
 export default function ProductsContainer({
   filteredProducts,
@@ -10,7 +11,7 @@ export default function ProductsContainer({
     page * resultsPerPage
   );
   return (
-    <section className="productContainer">
+    <section className={styles.productContainer}>
       {displayedProducts.map((prod) => {
         return <Product key={prod.id} prod={prod} />;
       })}

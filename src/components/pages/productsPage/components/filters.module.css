@@ -1,0 +1,25 @@
+.filters {
+  background-color: blanchedalmond;
+  padding: 8px;
+
+  flex-basis: 300px;
+  flex-grow: 1;
+}
+
+.filters label {
+  display: block;
+}
+
+.filters label > input {
+  margin-right: 4px;
+}
+
+.filters > * {
+  margin: 8px 0;
+}
+
+.filters input[type="text"] {
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid black;
+}
