@@ -2,7 +2,7 @@ import StarRating from "./starRating";
 
 export default function Filters(props) {
   return (
-    <section className="filters">
+    <article className="filters">
       <h3>Search Filters</h3>
       <input
         type="text"
@@ -42,6 +42,21 @@ export default function Filters(props) {
           handler={(x) => props.setStars(x + 1)}
         />
       </div>
+      <div>
+        <h4>
+          <span>{props.resultsPerPage}</span> Results Per Page
+        </h4>
+        <input
+          type="range"
+          min="5"
+          max="20"
+          step="1"
+          value={props.resultsPerPage}
+          onChange={(e) => {
+            props.setResultsPerPage(e.target.value);
+          }}
+        />
+      </div>
       <button
         onClick={() => {
           props.setSearchVal("");
@@ -52,6 +67,6 @@ export default function Filters(props) {
       >
         Clear Filters
       </button>
-    </section>
+    </article>
   );
 }
