@@ -1,0 +1,21 @@
+.pageSelector {
+  margin-bottom: 24px;
+}
+
+.pageSelector > span {
+  cursor: pointer;
+  padding: 8px;
+  border: 1px solid black;
+  margin:4px;
+}
+
+.selectedPage {
+    background-color: var(--tertiary);
+    color:white;
+}
+
+
+.pageSelector > span:first-child, .pageSelector > span:last-child {
+  cursor: pointer;
+  border: none;
+}

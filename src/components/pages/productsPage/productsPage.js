@@ -75,13 +75,12 @@ export default function ProductsPage() {
           resultsPerPage={resultsPerPage}
         />
       </section>
-      <section className={styles.pageSelector}>
-        <PageSelector
-          numPages={Math.ceil(filteredProducts.length / resultsPerPage)}
-          page={page}
-          setPage={setPage}
-        />
-      </section>
+
+      <PageSelector
+        numPages={Math.ceil(filteredProducts.length / resultsPerPage)}
+        page={page}
+        setPage={setPage}
+      />
     </main>
   );
 }

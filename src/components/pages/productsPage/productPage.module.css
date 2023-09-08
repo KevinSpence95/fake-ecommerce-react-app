@@ -1,5 +1,5 @@
 .productPageContainer {
-    background-color: aliceblue;
+  background-color: aliceblue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +14,8 @@
   flex-wrap: wrap;
   align-items: start;
 }
-
+/* 
 .pageSelector {
   background-color: blanchedalmond;
-}
+  margin-bottom: 8px;
+} */

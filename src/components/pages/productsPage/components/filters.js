@@ -1,10 +1,10 @@
 import StarRating from "./starRating";
-import styles from './filters.module.css'
+import styles from "./filters.module.css";
 
 export default function Filters(props) {
   return (
     <article className={styles.filters}>
-      <h3>Search Filters</h3>
+      <h3 style={{ textDecoration: "underline" }}>Search Filters</h3>
       <input
         type="text"
         className="searchBar"
@@ -41,7 +41,7 @@ export default function Filters(props) {
         <StarRating
           stars={props.stars}
           handler={(x) => props.setStars(x + 1)}
-          size={'large'}
+          size={"large"}
         />
       </div>
       <div>
@@ -65,7 +65,7 @@ export default function Filters(props) {
           props.setStars(0);
           props.setIncludeOutOfStock(false);
           props.setSortByAscendingPrice(false);
-          props.setResultsPerPage(10)
+          props.setResultsPerPage(10);
         }}
       >
         Clear Filters

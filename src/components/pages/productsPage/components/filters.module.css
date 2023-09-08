@@ -1,6 +1,7 @@
 .filters {
   background-color: blanchedalmond;
   padding: 8px;
+  border: 1px solid black;
 
   flex-basis: 300px;
   flex-grow: 1;
@@ -15,11 +16,22 @@
 }
 
 .filters > * {
-  margin: 8px 0;
+  margin: 8px;
 }
 
 .filters input[type="text"] {
   padding: 4px;
   border-radius: 12px;
   border: 1px solid black;
+}
+
+.filters button {
+  padding: 4px;
+  color: var(--primary);
+  background-color: var(--tertiary);
+  cursor: pointer;
+  border: 1px solid black;
+}
+.filters button:active {
+  transform: scale(1.1);
 }
