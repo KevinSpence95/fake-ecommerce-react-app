@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
-import { StoreData } from "../../../context/contextProvider";
+import { useState } from "react";
+import useShopContext from "../../../customHooks/useShopContext";
 import Filters from "./components/filters";
 import PageSelector from "./components/pageSelector";
 import ProductsContainer from "./components/productsContainer";
 import styles from "./productPage.module.css";
 
 export default function ProductsPage() {
-  const { state } = useContext(StoreData);
+  const { products } = useShopContext();
 
   //states for user filters
   const [searchVal, setSearchVal] = useState("");
@@ -19,7 +19,7 @@ export default function ProductsPage() {
   const [page, setPage] = useState(1);
 
   //derived state from applying filters to store product list
-  let filteredProducts = state.products
+  let filteredProducts = products
     .filter((prod) => {
       if (searchVal === "") {
         return true; //keep all products if searchVal is empty
