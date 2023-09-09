@@ -3,17 +3,20 @@ import { faker } from "@faker-js/faker";
 import cartReducer from "./reducer";
 
 export const StoreData = createContext();
-faker.seed(388);
+
+//https://fakerjs.dev/api/
+
+faker.seed(588);
 
 export default function ContextProvider({ children }) {
-  const products = [...Array(60)].map(() => {
+  const products = [...Array(100)].map(() => {
     return {
-      id: crypto.randomUUID(),
+      id: faker.number.int(),
       name: faker.commerce.productName(),
       price: faker.commerce.price(),
-      image: faker.image.urlLoremFlickr(),
-      inStock: Math.random() > 0.93 ? false : true,
-      rating: Math.floor(Math.random() * 5) + 1,
+      image: faker.image.urlPicsumPhotos(),
+      inStock: faker.datatype.boolean({ probability: 0.93 }),
+      rating: faker.number.int({ min: 1, max: 5 }),
     };
   });
 
