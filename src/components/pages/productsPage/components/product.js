@@ -1,6 +1,10 @@
 import styles from "./product.module.css";
 import StarRating from "./starRating";
+import useShopContext from "../../../../customHooks/useShopContext";
+
 export default function Product({ prod }) {
+    const {addToCart} = useShopContext()
+
   return (
     <article className={styles.productCard}>
       <img src={prod.image} alt={prod.name} />
@@ -13,7 +17,7 @@ export default function Product({ prod }) {
       )}
       <StarRating stars={prod.rating} size={'small'} />
       {/* NOTE: if a product's inStock property is false, no updates should be made to the cart. disabled = true will prevent our dispatch callback from firing */}
-      <button disabled={!prod.inStock}>Add to Cart</button>
+      <button disabled={!prod.inStock} onClick={()=>{addToCart(prod.id)}}>Add to Cart</button>
     </article>
   );
 }

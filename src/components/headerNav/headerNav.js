@@ -3,11 +3,20 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import styles from "./headerNav.module.css";
 
-// import { useContext } from "react";
-// import { storeData } from "../../context/context.js";
+import useShopContext from "../../customHooks/useShopContext";
 
 export default function Header() {
-  //   const { state } = useContext(storeData);
+  const { totalItems } = useShopContext();
+
+  const qtyIndicatorStyles = {
+    fontSize:'16px',
+    color: "white",
+    padding: "4px 10px",
+    marginLeft:"8px",
+    background: "red",
+    borderRadius: '100px',
+    border: '2px solid white'
+  };
 
   return (
     <header>
@@ -19,6 +28,7 @@ export default function Header() {
           <CustomLink to="/products">Products</CustomLink>
           <CustomLink to="/cart">
             <ShoppingCartIcon />
+            {totalItems > 0 && <span style={qtyIndicatorStyles}>{totalItems}</span>}
           </CustomLink>
         </ul>
       </nav>
