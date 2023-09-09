@@ -1,0 +1,45 @@
+.lineItem {
+    display:grid;
+    grid-template-columns: .5fr 1fr .5fr .5fr .25fr;
+    align-items: center;
+    gap:1rem;
+    border: 1px solid black;
+    margin:8px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    padding: 4px;
+}
+
+.lineItem img{
+    width: 120px;
+}
+
+.lineItem input {
+    width:48px;
+    padding: 4px;
+}
+
+.lineItem button {
+    width:48px;
+    padding: 4px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.lineItem button:active {
+   transform: scale(1.1);
+}
+
+/* .lineItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:16px;
+}
+.lineItem img{
+    width: 100px;
+}
+.lineItem img{
+    width: 100px;
+} */
