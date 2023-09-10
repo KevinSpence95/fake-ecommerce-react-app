@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useEffect } from "react";
 import { faker } from "@faker-js/faker";
 import cartReducer from "./reducer";
 
@@ -7,8 +7,6 @@ export const StoreData = createContext();
 //https://fakerjs.dev/api/
 
 faker.seed(588);
-
-//TODO check types of fakers and makes sure im handling them correclty in the reducer
 
 export default function ContextProvider({ children }) {
   const products = [...Array(100)].map(() => {
@@ -22,12 +20,26 @@ export default function ContextProvider({ children }) {
     };
   });
 
-  console.log(products)
+  //   console.log(products);
 
-  const [state, dispatch] = useReducer(cartReducer, {
-    products,
-    cart: [],
+  const [state, dispatch] = useReducer(cartReducer, undefined, () => {
+    const localData = localStorage.getItem("cart");
+    if (localData) {
+      return {
+        products,
+        cart: JSON.parse(localData),
+      };
+    } else {
+      return {
+        products,
+        cart: [],
+      };
+    }
   });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+  }, [state]);
 
   return (
     <StoreData.Provider value={{ state, dispatch }}>

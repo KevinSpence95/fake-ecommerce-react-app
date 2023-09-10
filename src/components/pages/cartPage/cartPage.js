@@ -1,6 +1,6 @@
 import useShopContext from "../../../customHooks/useShopContext";
 import CartLineItem from "./components/cartLineItem";
-import styles from './cartPage.module.css'
+import styles from "./cartPage.module.css";
 
 export default function CartPage() {
   const { cart, totalPrice, totalItems } = useShopContext();
@@ -20,8 +20,8 @@ export default function CartPage() {
             return <CartLineItem key={i} cartItem={item} />;
           })}
         </section>
+        <h2>{totalItems} Items</h2>
         <h2>Subtotal : ${totalPrice}</h2>
-        <h2>Items : {totalItems}</h2>
         <button>Proceed to checkout</button>
       </div>
     );
