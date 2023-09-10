@@ -21,6 +21,7 @@ export default function CartPage() {
           })}
         </section>
         <h2>Subtotal : ${totalPrice}</h2>
+        <h2>Items : {totalItems}</h2>
         <button>Proceed to checkout</button>
       </div>
     );

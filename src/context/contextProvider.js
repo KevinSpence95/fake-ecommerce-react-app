@@ -8,6 +8,8 @@ export const StoreData = createContext();
 
 faker.seed(588);
 
+//TODO check types of fakers and makes sure im handling them correclty in the reducer
+
 export default function ContextProvider({ children }) {
   const products = [...Array(100)].map(() => {
     return {
@@ -19,6 +21,8 @@ export default function ContextProvider({ children }) {
       rating: faker.number.int({ min: 1, max: 5 }),
     };
   });
+
+  console.log(products)
 
   const [state, dispatch] = useReducer(cartReducer, {
     products,

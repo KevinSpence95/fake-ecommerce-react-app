@@ -15,10 +15,10 @@ export default function CartLineItem({ cartItem }) {
       <input
         type="number"
         step={1}
-        min={1}
+        min={0}
         value={cartItem.qty}
         onChange={(e) => {
-          updateQty(cartItem.id, e.target.value);
+          updateQty(cartItem.id, parseInt(e.target.value));
         }}
       />
       <button

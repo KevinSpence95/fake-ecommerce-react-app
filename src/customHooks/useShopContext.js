@@ -34,6 +34,9 @@ export default function useShopContext() {
     return acc + correspondingProd.price * curr.qty;
   }, 0);
 
+  console.log("Cart");
+  console.log(cart);
+
   return {
     products,
     cart,

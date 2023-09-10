@@ -5,10 +5,11 @@
 }
 
 html {
-  --primary: whitesmoke;
+  --primary: aliceblue;
   --secondary: black;
   --tertiary: cornflowerblue;
   --tertiary-light: rgb(115, 164, 255);
+
   background-color: var(--primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
