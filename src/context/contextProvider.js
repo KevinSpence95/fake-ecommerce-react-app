@@ -17,6 +17,8 @@ export default function ContextProvider({ children }) {
       image: faker.image.urlPicsumPhotos(),
       inStock: faker.datatype.boolean({ probability: 0.93 }),
       rating: faker.number.int({ min: 1, max: 5 }),
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus error fugit recusandae nulla architecto vitae sequi! Libero, dignissimos est voluptatum nobis facere atque error fuga sint temporibus numquam sequi earum.",
     };
   });
 
