@@ -1,0 +1,46 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;;
+  gap:2rem;
+  margin-bottom: 2rem;
+}
+
+.hero .clip {
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: center;
+
+  background-image: url("Mountains.jpg");
+  background-size: cover;
+  background-position: center left;
+  /*https://caniuse.com/?search=background-clip*/
+  -webkit-background-clip: text; /*for Chrome compatibility*/
+  background-clip: text; /*for every other browser*/
+  color: transparent; /*OR hsla(0, 0%, 0%, 0.15) */
+  
+}
+
+.hero a {
+  display: block;
+  background-color: magenta;
+  text-decoration: none;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  transition: all .4s ease
+}
+
+.hero a:hover {
+  box-shadow: rgba(255, 0, 255, 0.382) 0px 20px 30px;
+}
+.hero a:active {
+  transform: scale(1.05);
+}
+
+@media (width < 730px) {
+  .hero .clip {
+    font-size: 4.5rem;
+  }
+}

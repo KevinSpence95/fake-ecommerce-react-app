@@ -1,0 +1,17 @@
+.countDownTimer {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 0.25rem;
+}
+
+.countDownTimer span {
+  display: block;
+  padding: 0.5rem;
+}
+.countDownTimer :is(.days,.hours,.minutes,.seconds) {
+  border: 1px solid black;
+}
