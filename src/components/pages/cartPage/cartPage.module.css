@@ -1,31 +1,38 @@
 .cartSummary {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
 }
 .cartSummary > h2:first-child {
-    align-self: flex-start;
-    margin-left: 7.5vw;
-    text-decoration: underline;
+  align-self: flex-start;
+  margin-left: 7.5vw;
+  text-decoration: underline;
 }
 
 .cartSummary > button {
-    width: 50vw;
-    background-color: var(--tertiary);
-    padding: 8px;
-    margin-top: 4px;
-    color: white;
-    border-radius: 32px;
-    border: 1px solid black;
+  width: 50vw;
+  background-color: var(--tertiary);
+  padding: 8px;
+  margin-top: 4px;
+  color: white;
+  border-radius: 32px;
+  border: 1px solid black;
 }
 
 .cartSummary > button:active {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 .lineItems {
-    width:85vw;
+  width: 85vw;
+  margin-bottom: 16px;
+}
+
+@media (width<600px) {
+  .lineItems {
+    width: 100vw;
     margin-bottom: 16px;
+  }
 }

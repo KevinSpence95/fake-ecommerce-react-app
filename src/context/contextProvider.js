@@ -1,6 +1,6 @@
 import { createContext, useReducer, useEffect } from "react";
 import { faker } from "@faker-js/faker";
-import cartReducer from "./reducer";
+import cartReducer from "../reducers/reducer";
 
 export const StoreData = createContext();
 
