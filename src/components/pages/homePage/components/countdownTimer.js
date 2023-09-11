@@ -43,7 +43,7 @@ export default function CountdownTimer({ futureDateMS }) {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [futureDateMS]);
 
   return (
     <div className={styles.countDownTimer}>

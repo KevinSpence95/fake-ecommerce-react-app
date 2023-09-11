@@ -27,6 +27,7 @@ export default function ProductsPage() {
         if (prod.name.toLowerCase().includes(searchVal.toLowerCase())) {
           return true; //if there is a search value, only keep products that include the searchVal
         }
+        return false;
       }
     })
     .filter((prod) => {

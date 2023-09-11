@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import styles from "./headerNav.module.css";

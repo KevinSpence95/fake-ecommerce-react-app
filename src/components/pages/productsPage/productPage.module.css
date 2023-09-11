@@ -12,10 +12,5 @@
 
   display: flex;
   flex-wrap: wrap;
-  align-items: start;
+  align-items: flex-start;
 }
-/* 
-.pageSelector {
-  background-color: blanchedalmond;
-  margin-bottom: 8px;
-} */

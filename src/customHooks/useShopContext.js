@@ -13,15 +13,15 @@ export default function useShopContext() {
 
   const addToCart = useCallback((id) => {
     dispatch({ type: "ADD_TO_CART", payload: { id } });
-  });
+  },[dispatch]);
 
   const removeFromCart = useCallback((id) => {
     dispatch({ type: "REMOVE_ITEM", payload: { id } });
-  });
+  },[dispatch]);
 
   const updateQty = useCallback((id, qty) => {
     dispatch({ type: "UPDATE_QTY", payload: { id, qty } });
-  });
+  },[dispatch]);
 
   const totalItems = cart.reduce((acc, curr) => {
     return acc + curr.qty;
